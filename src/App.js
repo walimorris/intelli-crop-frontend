@@ -23,6 +23,9 @@ function App({ signOut, user }) {
     const USER_POOL_ID = process.env.USER_POOL_ID;
     const USER_POOL_WEB_CLIENT_ID = process.env.USER_POOL_WEB_CLIENT_ID;
 
+    console.log(`Identity Pool Id: ${IDENTITY_POOL_ID}`);
+    console.log(`Input Bucket: ${INPUT_BUCKET}`);
+
     useEffect(() => {
 
         const webcamElement = document.getElementById('webcam');
