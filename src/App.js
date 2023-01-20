@@ -16,12 +16,12 @@ Amplify.configure(awsExports);
 
 function App({ signOut, user }) {
 
-    const IDENTITY_POOL_ID = process.env.IDENTITY_POOL_ID;
-    const INPUT_BUCKET = process.env.INPUT_BUCKET;
-    const OUTPUT_BUCKET = process.env.OUTPUT_BUCKET;
-    const REGION = process.env.REGION;
-    const USER_POOL_ID = process.env.USER_POOL_ID;
-    const USER_POOL_WEB_CLIENT_ID = process.env.USER_POOL_WEB_CLIENT_ID;
+    const IDENTITY_POOL_ID = process.env.REACT_APP_IDENTITY_POOL_ID;
+    const INPUT_BUCKET = process.env.REACT_APP_INPUT_BUCKET;
+    const OUTPUT_BUCKET = process.env.REACT_APP_OUTPUT_BUCKET;
+    const REGION = process.env.REACT_APP_REGION;
+    const USER_POOL_ID = process.env.REACT_APP_USER_POOL_ID;
+    const USER_POOL_WEB_CLIENT_ID = process.env.REACT_APP_USER_POOL_WEB_CLIENT_ID;
 
     console.log(`Identity Pool Id: ${IDENTITY_POOL_ID}`);
     console.log(`Input Bucket: ${INPUT_BUCKET}`);
