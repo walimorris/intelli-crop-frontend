@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-intellicrop-dev-212834-authRole",
+      "UnauthRoleArn": "arn:aws:iam::645019975806:role/amplify-intellicrop-dev-212834-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::645019975806:role/amplify-intellicrop-dev-212834-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-intellicrop-dev-212834-deployment",
+      "UnauthRoleName": "amplify-intellicrop-dev-212834-unauthRole",
+      "StackName": "amplify-intellicrop-dev-212834",
+      "StackId": "arn:aws:cloudformation:us-west-2:645019975806:stack/amplify-intellicrop-dev-212834/a01a5c60-955e-11ed-afb5-0264e65f78b1",
+      "AmplifyAppId": "d146waerywvydh"
+    },
+    "categories": {
+      "auth": {
+        "intellicrop3390f848": {}
+      }
+    }
+  }
+}

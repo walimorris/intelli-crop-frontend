@@ -1,0 +1,179 @@
+#app {
+  background-color: #f5f5f5;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+#camera-canvas {
+  border: 1px solid black;
+}
+
+#crop-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 30px 50px 80px;
+}
+
+#logout-cta {
+  background-color: #2565AE;
+  display: flex;
+  align-items: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+#welcome-text {
+  margin: 0 0 0 5%;
+  color: #fff;
+}
+
+#logout-button {
+  margin-left: auto;
+  margin-right: 10%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  color: #fff;
+  font-size: 20px;
+}
+
+#logout-button:hover {
+  color: lightgray;
+}
+
+#start-button:hover {background-color: #3e8e41}
+
+#start-button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#start-button {
+  display: inline-block;
+  padding: 15px 25px;
+  margin-right: 1%;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+#stop-button:hover {background-color: indianred}
+
+#stop-button:active {
+  background-color: indianred;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#stop-button {
+  display: inline-block;
+  padding: 15px 25px;
+  margin-right: 10%;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: red;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+#snap-button:hover {background-color: blue}
+
+#snap-button:active {
+  background-color: blue;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#snap-button {
+  display: inline-block;
+  padding: 15px 25px;
+  margin-right: 1%;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: mediumblue;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+#uploadS3-button:hover {background-color: blue}
+
+#uploadS3-button:active {
+  background-color: blue;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#uploadS3-button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: mediumblue;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+#cropped-image {
+  border: 1px solid black;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
