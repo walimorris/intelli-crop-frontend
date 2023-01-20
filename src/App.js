@@ -23,6 +23,9 @@ function App({ signOut, user }) {
     const USER_POOL_ID = process.env.REACT_APP_USER_POOL_ID;
     const USER_POOL_WEB_CLIENT_ID = process.env.REACT_APP_USER_POOL_WEB_CLIENT_ID;
 
+    const keyPrefix = splitUserEmail(user.attributes.email);
+    const imageKey = `${keyPrefix}-user-photo.png`;
+
     useEffect(() => {
 
         const webcamElement = document.getElementById('webcam');
@@ -60,7 +63,7 @@ function App({ signOut, user }) {
                 const buf = Buffer.from(picture.replace(/^data:image\/\w+;base64,/, ""),'base64');
 
                 try {
-                    await Storage.put('user-photo.png', buf, {
+                    await Storage.put(imageKey, buf, {
                         contentType: "image/png",
                         contentEncoding: 'base64'
                     });
@@ -103,9 +106,14 @@ function App({ signOut, user }) {
         });
     }
 
+    function splitUserEmail(email) {
+        const splitArray = email.split('@');
+        return splitArray[0];
+    }
+
     function load() {
         setTimeout(function () {
-            document.getElementById('cropped-image').src = `https://${OUTPUT_BUCKET}.s3.${REGION}.amazonaws.com/public/user-photo.png`;
+            document.getElementById('cropped-image').src = `https://${OUTPUT_BUCKET}.s3.${REGION}.amazonaws.com/public/${imageKey}`;
         }, 10000);
     }
 
