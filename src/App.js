@@ -106,11 +106,21 @@ function App({ signOut, user }) {
         });
     }
 
+    /**
+     * Splits user email attribute and pulls out the name value in the user's email address.
+     *
+     * @param email Cognito user email attribute
+     * @return {*}
+     */
     function splitUserEmail(email) {
         const splitArray = email.split('@');
         return splitArray[0];
     }
 
+    /**
+     * Parses url for the user's image stored in S3 and uploads image after some wait. The timeout is used
+     * to give S3 enough process time to reassign the image in storage.
+     */
     function load() {
         setTimeout(function () {
             document.getElementById('cropped-image').src = `https://${OUTPUT_BUCKET}.s3.${REGION}.amazonaws.com/public/${imageKey}`;
