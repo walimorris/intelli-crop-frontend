@@ -16,6 +16,13 @@ Amplify.configure(awsExports);
 
 function App({ signOut, user }) {
 
+    const IDENTITY_POOL_ID = process.env.IDENTITY_POOL_ID;
+    const INPUT_BUCKET = process.env.INPUT_BUCKET;
+    const OUTPUT_BUCKET = process.env.OUTPUT_BUCKET;
+    const REGION = process.env.REGION;
+    const USER_POOL_ID = process.env.USER_POOL_ID;
+    const USER_POOL_WEB_CLIENT_ID = process.env.USER_POOL_WEB_CLIENT_ID;
+
     useEffect(() => {
 
         const webcamElement = document.getElementById('webcam');
@@ -47,7 +54,7 @@ function App({ signOut, user }) {
         });
 
         uploadS3Button.addEventListener('click', async () => {
-            // configureInputBucket();
+            configureInputBucket();
             if (picture !== null) {
                 console.log('picture is not null');
                 const buf = Buffer.from(picture.replace(/^data:image\/\w+;base64,/, ""),'base64');
@@ -79,9 +86,26 @@ function App({ signOut, user }) {
         });
     }, []);
 
+    function configureInputBucket() {
+        Amplify.configure({
+            Auth: {
+                identityPoolId: IDENTITY_POOL_ID,
+                region: REGION,
+                userPoolId: USER_POOL_ID,
+                userPoolWebClientId: USER_POOL_WEB_CLIENT_ID,
+            },
+            Storage: {
+                AWSS3: {
+                    bucket: INPUT_BUCKET,
+                    region: REGION,
+                }
+            }
+        });
+    }
+
     function load() {
         setTimeout(function () {
-            document.getElementById('cropped-image').src = 'https://output-intelli-crop.s3.us-west-2.amazonaws.com/public/user-photo.png';
+            document.getElementById('cropped-image').src = `https://${OUTPUT_BUCKET}.s3.${REGION}.amazonaws.com/public/user-photo.png`;
         }, 10000);
     }
 
