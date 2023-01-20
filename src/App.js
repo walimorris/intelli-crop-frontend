@@ -23,9 +23,6 @@ function App({ signOut, user }) {
     const USER_POOL_ID = process.env.REACT_APP_USER_POOL_ID;
     const USER_POOL_WEB_CLIENT_ID = process.env.REACT_APP_USER_POOL_WEB_CLIENT_ID;
 
-    console.log(`Identity Pool Id: ${IDENTITY_POOL_ID}`);
-    console.log(`Input Bucket: ${INPUT_BUCKET}`);
-
     useEffect(() => {
 
         const webcamElement = document.getElementById('webcam');
@@ -59,7 +56,7 @@ function App({ signOut, user }) {
         uploadS3Button.addEventListener('click', async () => {
             configureInputBucket();
             if (picture !== null) {
-                console.log('picture is not null');
+                console.log('Image is ready');
                 const buf = Buffer.from(picture.replace(/^data:image\/\w+;base64,/, ""),'base64');
 
                 try {
